@@ -57,20 +57,22 @@ jobs:
           echo "CONFIG_PACKAGE_luci=y\n" >> .config
           echo "CONFIG_PACKAGE_kmod-qca-nss-dp=y\n" >> .config
           echo "CONFIG_PACKAGE_qca-ssdk-shell=y\n" >> .config
-          echo "CONFIG_PACKAGE_wireguard=y" >> .config
-          echo "CONFIG_PACKAGE_wireguard-tools=y" >> .config
           echo "CONFIG_PACKAGE_openvpn=y" >> .config
-          echo "CONFIG_PACKAGE_wpad-openssl=y\n" >> .config
-          echo "CONFIG_PACKAGE_openvpn-openssl=y\n" >> .config
-          echo "CONFIG_PACKAGE_kmod-wireguard=y\n" >> .config
+          echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
           echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
-          echo "CONFIG_PACKAGE_wireguard-tools=y\n" >> .config
           echo "CONFIG_PACKAGE_curl=y\n" >> .config
           echo "CONFIG_PACKAGE_jq=y\n" >> .config
-          echo "CONFIG_PACKAGE_vpn-policy-routing=y\n" >> .config
-          echo "CONFIG_PACKAGE_luci-app-vpn-policy-routing=y\n" >> .config
-          echo "CONFIG_PACKAGE_luci-proto-wireguard=y\n" >> .config
-          echo "CONFIG_PACKAGE_luci-app-wireguard=y\n" >> .config
+          echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
+          echo "CONFIG_PACKAGE_openvpn-wolfssl=y\n" >> .config
+          echo "CONFIG_OPENVPN_wolfssl=y\n" >> .config
+          echo "CONFIG_PACKAGE_px5g-wolfssl=y\n" >> .config
+          echo "CONFIG_OPENVPN_wolfssl_ENABLE_DEF_AUTH=y\n" >> .config
+          echo "CONFIG_OPENVPN_wolfssl_ENABLE_FRAGMENT=y\n" >> .config
+          echo "CONFIG_OPENVPN_wolfssl_ENABLE_LZ4=y\n" >> .config
+          echo "CONFIG_OPENVPN_wolfssl_ENABLE_MULTIHOME=y\n" >> .config
+          echo "CONFIG_OPENVPN_wolfssl_ENABLE_PF=y\n" >> .config
+          echo "CONFIG_OPENVPN_wolfssl_ENABLE_PORT_SHARE=y\n" >> .config
+          echo "CONFIG_OPENVPN_wolfssl_ENABLE_SMALL=y\n" >> .config
           make defconfig
           cat .config
       - name: Download package sources
