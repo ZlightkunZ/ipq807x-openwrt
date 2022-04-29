@@ -73,6 +73,7 @@ jobs:
           echo "CONFIG_OPENVPN_wolfssl_ENABLE_PF=y\n" >> .config
           echo "CONFIG_OPENVPN_wolfssl_ENABLE_PORT_SHARE=y\n" >> .config
           echo "CONFIG_OPENVPN_wolfssl_ENABLE_SMALL=y\n" >> .config
+          echo "CONFIG_WOLFSSL_HAS_OPENVPN=y\n" >> .config
           make defconfig
           cat .config
       - name: Download package sources
