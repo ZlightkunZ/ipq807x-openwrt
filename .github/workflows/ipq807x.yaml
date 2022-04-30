@@ -74,6 +74,10 @@ jobs:
           echo "CONFIG_OPENVPN_wolfssl_ENABLE_PORT_SHARE=y\n" >> .config
           echo "CONFIG_OPENVPN_wolfssl_ENABLE_SMALL=y\n" >> .config
           echo "CONFIG_WOLFSSL_HAS_OPENVPN=y\n" >> .config
+          echo "CONFIG_PACKAGE_kmod-wireguard=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-wireguard=y" >> .config
+          echo "CONFIG_PACKAGE_luci-proto-wireguard=y" >> .config
+          echo "CONFIG_PACKAGE_wireguard-tools=y" >> .config
           make defconfig
           cat .config
       - name: Download package sources
