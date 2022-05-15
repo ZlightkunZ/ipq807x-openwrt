@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
   push:
   schedule:
-    - cron: '0 6 * * *'
+    - cron: '0 6 * * 2'
 jobs:
   check:
     name: Check remote repo for new commits
@@ -30,7 +30,7 @@ jobs:
     name: Build the remote repository
     needs: check
     runs-on: ubuntu-latest
-    if: ${{ needs.check.outputs.commit_age <= 24 || github.event_name == 'workflow_dispatch' }}
+    if: ${{ needs.check.outputs.commit_age <= 168 || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Show inputs received from previous job
         env:
@@ -38,7 +38,7 @@ jobs:
         run: |
           echo "Build triggered with commits last pushed $COMMIT_AGE hours ago"
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
         with:
           repository: robimarko/openwrt
           ref: ipq807x-5.15
@@ -84,7 +84,7 @@ jobs:
       - name: TAR output
         run: tar -cvf ipq807xx-images.tar bin/targets/ipq807x/generic
       - name: Upload artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: ipq807x-images
           path: ipq807xx-images.tar
@@ -95,7 +95,7 @@ jobs:
 
     steps:
       - name: Download the image artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v3
         with:
           name: ipq807x-images
       - name: Extract the image artifacts
