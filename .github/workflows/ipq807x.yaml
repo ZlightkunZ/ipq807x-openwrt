@@ -14,7 +14,7 @@ jobs:
           curl -sL "https://api.github.com/repos/$REMOTE_REPOSITORY/commits?sha=$REMOTE_BRANCH&per_page=1" | jq -r '[.[]][0]' > commit.json
         env:
           REMOTE_REPOSITORY: robimarko/openwrt
-          REMOTE_BRANCH: ipq807x-5.15
+          REMOTE_BRANCH: ipq807x-5.15-pr
       - name: Calculate hours since last commit
         id: calc
         run: |
