@@ -122,6 +122,6 @@ jobs:
           repo_token: '${{ secrets.GITHUB_TOKEN }}'
           prerelease: true
           title: "Updated prebuilt images ${{ env.NOW }}"
-          automatic_release_tag: "ipq807x-AX3600-${{ env.NOW }}"
+          automatic_release_tag: "ipq807x-AX3600${{ NOW }}"
           files: bin/targets/ipq807x/generic/*
 
