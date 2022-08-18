@@ -63,6 +63,10 @@ jobs:
           echo "CONFIG_PACKAGE_curl=y\n" >> .config
           echo "CONFIG_PACKAGE_jq=y\n" >> .config
           echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
+          echo "CONFIG_PACKAGE_ddns-scripts=y\n" >> .config
+          echo "CONFIG_PACKAGE_ddns-scripts-services=y\n" >> .config
+          echo "CONFIG_PACKAGE_uhttpd-mod-ubus=y\n" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ddns=y\n" >> .config
           echo "CONFIG_PACKAGE_openvpn-wolfssl=y\n" >> .config
           echo "CONFIG_OPENVPN_igmpproxy=y\n" >> .config
           echo "CONFIG_OPENVPN_wolfssl=y\n" >> .config
