@@ -122,6 +122,9 @@ jobs:
         run: echo "NOW=$(date +%F)" >> $GITHUB_ENV
       - name: Create a release
         uses: marvinpinto/action-automatic-releases@latest
+        permissions:
+          issues: write
+          pull-requests: write
         with:
           repo_token: '${{ secrets.GITHUB_TOKEN }}'
           prerelease: true
