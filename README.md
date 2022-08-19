@@ -1,4 +1,4 @@
-# ipq807x-openwrt-builder
+# ipq807x-openwrt build for AX3600 with VPN pre-installed
 Automated builds of robimarko's IPQ807x OpenWRT repository \([ipq807x-5.15-pr branch](https://github.com/robimarko/openwrt/tree/ipq807x-5.15-pr)\) using GitHub Actions
 
 - robimarko's fork is pulled weekly and if last commit is less than a week old a new build is triggered.
