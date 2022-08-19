@@ -113,6 +113,7 @@ jobs:
     permissions:
        issues: write
        pull-requests: write
+       checks: write
     steps:
       - name: Download the image artifacts
         uses: actions/download-artifact@v2
