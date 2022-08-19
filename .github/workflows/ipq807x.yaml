@@ -110,9 +110,9 @@ jobs:
     name: Upload artifacts as release
     needs: build
     runs-on: ubuntu-latest
-   permissions:
-        issues: write
-        pull-requests: write
+    permissions:
+       issues: write
+       pull-requests: write
     steps:
       - name: Download the image artifacts
         uses: actions/download-artifact@v2
