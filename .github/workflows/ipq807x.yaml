@@ -128,7 +128,7 @@ jobs:
         with:
           repo_token: '${{ secrets.GITHUB_TOKEN }}'
           prerelease: true
-          title: "Updated prebuilt images"
-          automatic_release_tag: "AX3600-VPN"
+          title: "Updated prebuilt images ${{ env.NOW }}"
+          automatic_release_tag: "AX3600-VPN-${{ env.NOW }}"
           files: bin/targets/ipq807x/generic/*
 
