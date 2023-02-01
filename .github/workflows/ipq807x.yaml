@@ -23,7 +23,7 @@ jobs:
           hours=$(( ( $(date --utc +%s) - $timestamp ) / 3600 ))
           echo "Last commit date: $date"
           echo "Hours since last commit: $hours"
-          echo "::set-output name=commit_age::$hours"
+          echo "::{name}={commit_age}>> $GITHUB_OUTPUT::$hours"
     outputs:
       commit_age: ${{ steps.calc.outputs.commit_age }}
   build:
