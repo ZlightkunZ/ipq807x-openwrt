@@ -13,8 +13,8 @@ jobs:
         run: |
           curl -sL "https://api.github.com/repos/$REMOTE_REPOSITORY/commits?sha=$REMOTE_BRANCH&per_page=1" | jq -r '[.[]][0]' > commit.json
         env:
-          REMOTE_REPOSITORY: robimarko/openwrt
-          REMOTE_BRANCH: ipq807x-5.15-pr
+          REMOTE_REPOSITORY: openwrt/openwrt
+          REMOTE_BRANCH: master
       - name: Calculate hours since last commit
         id: calc
         run: |
@@ -127,6 +127,6 @@ jobs:
           repo_token: '${{ secrets.GITHUB_TOKEN }}'
           prerelease: true
           title: "Updated prebuilt images ${{ env.NOW }}"
-          automatic_release_tag: "AX3600-VPN-${{ env.NOW }}"
+          automatic_release_tag: "AX3600-VPN"
           files: bin/targets/ipq807x/generic/*
 
