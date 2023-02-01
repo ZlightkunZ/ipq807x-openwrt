@@ -40,8 +40,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         with:
-          repository: robimarko/openwrt
-          ref: ipq807x-5.15-pr
+          repository: openwrt/openwrt
+          ref: master
       - name: Update and install feeds
         run: |
           ./scripts/feeds update -a
