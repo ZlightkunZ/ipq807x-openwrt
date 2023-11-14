@@ -46,11 +46,11 @@ jobs:
         run: |
           ./scripts/feeds update -a
           ./scripts/feeds install -a
-      - name: Generate config for IPQ807x Generic
+      - name: Generate config for IPQ807x Qualcommax
         run: |
           echo "CONFIG_TARGET_ipq807x=y\n" > .config
-          echo "CONFIG_TARGET_ipq807x_generic=y\n" >> .config
-          echo "CONFIG_TARGET_ipq807x_generic_DEVICE_xiaomi_ax3600=y\n" >> .config
+          echo "CONFIG_TARGET_ipq807x_qualcommax=y\n" >> .config
+          echo "CONFIG_TARGET_ipq807x_qualcommax_DEVICE_xiaomi_ax3600=y\n" >> .config
           echo "CONFIG_TARGET_PER_DEVICE_ROOTFS=y\n" >> .config
           echo "CONFIG_TARGET_ROOTFS_INITRAMFS=y\n" >> .config
           echo "CONFIG_TARGET_INITRAMFS_COMPRESSION_ZSTD=y\n" >> .config
@@ -58,12 +58,14 @@ jobs:
           echo "CONFIG_PACKAGE_kmod-qca-nss-dp=y\n" >> .config
           echo "CONFIG_PACKAGE_qca-ssdk-shell=y\n" >> .config
           echo "CONFIG_PACKAGE_openvpn=y" >> .config
-          echo "CONFIG_PACKAGE_wpad-wolfssl=y\n" >> .config
+          echo "CONFIG_PACKAGE_wpad-mbedtls=y\n" >> .config
           echo "CONFIG_PACKAGE_kmod-tun=y\n" >> .config
           echo "CONFIG_PACKAGE_curl=y\n" >> .config
           echo "CONFIG_PACKAGE_jq=y\n" >> .config
+          echo "CONFIG_PACKAGE_luci-app-ddns=y\n" >> .config
           echo "CONFIG_PACKAGE_luci-app-openvpn=y\n" >> .config
           echo "CONFIG_PACKAGE_ddns-scripts=y\n" >> .config
+          echo "CONFIG_PACKAGE_ddns-scripts-cloudflare=y\n" >> .config
           echo "CONFIG_PACKAGE_ddns-scripts-services=y\n" >> .config
           echo "CONFIG_PACKAGE_uhttpd-mod-ubus=y\n" >> .config
           echo "CONFIG_PACKAGE_luci-app-ddns=y\n" >> .config
@@ -85,6 +87,12 @@ jobs:
           echo "CONFIG_PACKAGE_wireguard-tools=y" >> .config
           echo "CONFIG_PACKAGE_luci-app-sqm=y" >> .config
           echo "CONFIG_PACKAGE_iperf3=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-dawn=y" >> .config
+          echo "CONFIG_PACKAGE_luci-app-sqm=y" >> .config
+          echo "CONFIG_PACKAGE_adguardhome=y" >> .config
+          echo "CONFIG_PACKAGE_luci-ssl-nginx=y" >> .config
+          echo "CONFIG_PACKAGE_mesh11sd=y" >> .config
+          echo "CONFIG_PACKAGE_mesh11sd=y" >> .config
           make defconfig
           cat .config
       - name: Download package sources
